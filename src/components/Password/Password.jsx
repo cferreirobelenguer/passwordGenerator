@@ -9,8 +9,8 @@ const Password = () => {
             <div className="password-container-section">
                 <h2 className='password-title'>Password Generator</h2>
                 <div className='password-result'>
-                    <span id="result"></span>
-                    <button className="password-btn" id="clipboard" ><ContentPaste></ContentPaste></button>
+                    <span id="result">hola</span>
+                    <button className="password-btn" id="clipboard" onClick={() => {navigator.clipboard.writeText(textToCopy)}} ><ContentPaste></ContentPaste></button>
                 </div>
             </div>
         </section>
