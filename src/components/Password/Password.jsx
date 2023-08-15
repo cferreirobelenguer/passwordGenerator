@@ -64,7 +64,271 @@ const Password = () => {
             resultABC += ABC.charAt(Math.floor(Math.random() * number));
         }
         setResult(resultABC);
+    }
 
+    const getNumericUppercase = (number) => {
+        //numeric and uppercase
+        const numberChars = "1234567890";
+        const ABC = "ABCDEJGHIJKLMNÑOPQRSTUVWXYZ";
+        const allCharts = numberChars + ABC
+        let password = '';
+        if (number >= 1) {
+            password += ABC.charAt(Math.floor(Math.random() * ABC.length));
+        }
+
+        if (number >= 2) {
+            password += numberChars.charAt(Math.floor(Math.random() * numberChars.length));
+        }
+
+        for ( let i=2; i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() * allCharts.length))
+        }
+        setResult(password);
+    }
+
+    const getNumericLowercaseUppercase = (number) => {
+        //numeric, lowercase, uppercase
+        const numberChars = "1234567890";
+        const ABC = "ABCDEJGHIJKLMNÑOPQRSTUVWXYZ";
+        const abc = "abcdefghijklmnñopqrstuwxyz"
+        const allCharts = numberChars + ABC + abc;
+        let password ='';
+
+        if (number >= 1) {
+            password += ABC.charAt(Math.floor(Math.random() * ABC.length));
+        }
+
+        if (number >= 2) {
+            password += numberChars.charAt(Math.floor(Math.random() * numberChars.length));
+        }
+
+        if (number >= 3) {
+            password += abc.charAt(Math.floor(Math.random() * abc.length));
+        }
+
+        for (let i=3; i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() * allCharts.length))
+        }
+
+        setResult(password);
+    }
+
+    const getNumericSymbol = (number) => {
+        //numeric and symbols
+        const numberChars = "1234567890";
+        const symb = ",.-;:-¨´ç}{+`[]^*¡¿'?=)(/&%$#@|!ºª";
+        const allCharts = numberChars + symb;
+        let password = '';
+
+        if (number >= 1) {
+            password += symb.charAt(Math.floor(Math.random() * symb.length));
+        }
+
+        if (number >= 2) {
+            password += numberChars.charAt(Math.floor(Math.random() * numberChars.length));
+        }
+
+        for ( let i=2; i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() * allCharts.length))
+        }
+        setResult(password)
+    }
+
+    const getNumericLowercase = (number) => {
+        //numeric and lowercase
+        const numberChars = "1234567890";
+        const abc = "abcdefghijklmnñopqrstuwxyz"
+        const allCharts = numberChars + abc
+        let password = '';
+
+        if (number >= 1) {
+            password += abc.charAt(Math.floor(Math.random() * abc.length));
+        }
+
+        if (number >= 2) {
+            password += numberChars.charAt(Math.floor(Math.random() * numberChars.length));
+        }
+
+        for ( let i=2; i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() * allCharts.length))
+        }
+        setResult(password)
+    }
+
+    const getNumericLowercaseUppercaseSymbol = (number) => {
+        //numeric, lowercase, uppercase, symbol
+        const numberChars = "1234567890";
+        const ABC = "ABCDEJGHIJKLMNÑOPQRSTUVWXYZ";
+        const abc = "abcdefghijklmnñopqrstuwxyz";
+        const symb = ",.-;:-¨´ç}{+`[]^*¡¿'?=)(/&%$#@|!ºª";
+        const allCharts = numberChars + ABC + abc + symb;
+        let password ='';
+
+        if (number >= 1) {
+            password += ABC.charAt(Math.floor(Math.random() * ABC.length));
+        }
+
+        if (number >= 2) {
+            password += numberChars.charAt(Math.floor(Math.random() * numberChars.length));
+        }
+
+        if (number >= 3) {
+            password += abc.charAt(Math.floor(Math.random() * abc.length));
+        }
+
+        if (number >= 4) {
+            password += symb.charAt(Math.floor(Math.random() * symb.length));
+        }
+
+        for (let i=4; i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() * allCharts.length))
+        }
+
+        setResult(password);
+    }
+
+    const getLowercaseUppercase = (number) => {
+        //lowercase, uppercase
+        const ABC = "ABCDEJGHIJKLMNÑOPQRSTUVWXYZ";
+        const abc = "abcdefghijklmnñopqrstuwxyz";
+        const allCharts = abc + ABC;
+        let password = '';
+
+        if ( number >= 1 ) {
+            password +=abc.charAt(Math.floor(Math.random() * abc.length));
+        }
+
+        if (number >= 2) {
+            password +=ABC.charAt(Math.floor(Math.random() * ABC.length));
+        }
+
+        for ( let i=2;i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() * allCharts.length));
+        }
+
+        setResult(password);
+    }
+
+    const getUppercaseSymbol = (number) => {
+        // uppercase, symbol
+        const ABC = "ABCDEJGHIJKLMNÑOPQRSTUVWXYZ";
+        const symb = ",.-;:-¨´ç}{+`[]^*¡¿'?=)(/&%$#@|!ºª";
+        const allCharts = ABC + symb;
+        let password = '';
+
+        if (number >= 1) {
+            password += ABC.charAt(Math.floor(Math.random() * ABC.length));
+        }
+
+        if (number >= 2) {
+            password += symb.charAt(Math.floor(Math.random() * symb.length));
+        }
+
+        for ( let i=2;i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() *allCharts.length));
+        }
+
+        setResult(password);
+    }
+
+    const getLowercaseSymbol = (number) =>{
+        //lowercase, symbol
+        const abc = "abcdefghijklmnñopqrstuwxyz";
+        const symb = ",.-;:-¨´ç}{+`[]^*¡¿'?=)(/&%$#@|!ºª";
+        const allCharts = abc +symb;
+        let password = '';
+        
+        if (number >= 1) {
+            password += abc.charAt(Math.floor(Math.random() * abc.length));
+        }
+
+        if (number >= 2) {
+            password += symb.charAt(Math.floor(Math.random() * symb.length));
+        }
+
+        for ( let i=2;i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() *allCharts.length));
+        }
+        setResult(password);
+    }
+
+    const getLowercaseNumberSymbol = (number) => {
+        //lowercase, number y symbol
+        const abc = "abcdefghijklmnñopqrstuwxyz";
+        const symb = ",.-;:-¨´ç}{+`[]^*¡¿'?=)(/&%$#@|!ºª";
+        const numberChars = "1234567890";
+        const allCharts = abc +symb + numberChars;
+        let password = '';
+        if (number >= 1) {
+            password += abc.charAt(Math.floor(Math.random() * abc.length));
+        }
+
+        if (number >= 2) {
+            password += symb.charAt(Math.floor(Math.random() * symb.length));
+        }
+
+        if (number >= 3) {
+            password += numberChars.charAt(Math.floor(Math.random() * numberChars.length));
+        }
+
+        for ( let i=3;i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() *allCharts.length));
+        }
+        setResult(password);
+    }
+
+    const getUppercaseNumberSymbol = (number) => {
+        //number, symbol
+        const ABC = "ABCDEJGHIJKLMNÑOPQRSTUVWXYZ";
+        const symb = ",.-;:-¨´ç}{+`[]^*¡¿'?=)(/&%$#@|!ºª";
+        const numberChars = "1234567890";
+        const allCharts = ABC + symb + numberChars
+        let password ='';
+
+        if (number >= 1) {
+            password += ABC.charAt(Math.floor(Math.random() * ABC.length));
+        }
+
+        if (number >= 2) {
+            password += symb.charAt(Math.floor(Math.random() * symb.length));
+        }
+
+        if (number >= 3) {
+            password += numberChars.charAt(Math.floor(Math.random() * numberChars.length));
+        }
+
+        for ( let i=3;i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() *allCharts.length));
+        }
+
+        setResult(password);
+    }
+
+    const getLowercaseUppercaseSymbol = (number) => {
+        //lowercase, uppercase, symbol
+        const ABC = "ABCDEJGHIJKLMNÑOPQRSTUVWXYZ";
+        const abc = "abcdefghijklmnñopqrstuwxyz";
+        const symb = ",.-;:-¨´ç}{+`[]^*¡¿'?=)(/&%$#@|!ºª";
+        const allCharts = abc + ABC +symb;
+        let password = '';
+
+        if ( number >= 1 ) {
+            password +=abc.charAt(Math.floor(Math.random() * abc.length));
+        }
+
+        if (number >= 2) {
+            password +=ABC.charAt(Math.floor(Math.random() * ABC.length));
+        }
+
+        if (number >= 3) {
+            password += symb.charAt(Math.floor(Math.random() * allCharts.length));
+        }
+
+        for ( let i=3;i<number; i++) {
+            password += allCharts.charAt(Math.floor(Math.random() * allCharts.length));
+        }
+
+        setResult(password);
     }
 
     const handleClick = () => {
@@ -77,12 +341,34 @@ const Password = () => {
         
         if (isNumeric && !isUppercase && !isLowercase && !isSymbol) {
             getNumeric(number);
+        } else if (isNumeric && isUppercase && !isLowercase && !isSymbol) {
+            getNumericUppercase(number);
+        } else if (isNumeric && isLowercase && !isUppercase && !isSymbol) {
+            getNumericLowercase(number);
+        } else if ( isNumeric && isLowercase && isUppercase && !isSymbol ) {
+            getNumericLowercaseUppercase(number);
+        } else if ( isNumeric && isLowercase && isUppercase && isSymbol ) {
+            getNumericLowercaseUppercaseSymbol(number);
+        } else if (isNumeric && isSymbol && !isLowercase && !isUppercase) {
+            getNumericSymbol(number);
         } else if (isSymbol && !isNumeric && !isUppercase && !isLowercase) {
             getSymbol(number);
         } else if (isLowercase && !isSymbol && !isUppercase && !isNumeric) {
             getLowercase(number);
         } else if (isUppercase && !isLowercase && !isNumeric && !isSymbol) {
             getUppercase(number);
+        } else if (isUppercase && isLowercase && !isNumeric && !isSymbol) {
+            getLowercaseUppercase(number);
+        } else if ( isUppercase && isLowercase && isSymbol && !isNumeric) {
+            getLowercaseUppercaseSymbol(number);
+        } else if (isUppercase && isSymbol && !isLowercase && !isNumeric) {
+            getUppercaseSymbol(number);
+        } else if (isLowercase && isSymbol && !isUppercase && !isNumeric){
+            getLowercaseSymbol(number);
+        } else if (isLowercase && isNumeric && isSymbol && !isUppercase) {
+            getLowercaseNumberSymbol(number);
+        } else if (isUppercase && isNumeric && isSymbol && !isLowercase) {
+            getUppercaseNumberSymbol(number);
         }
     }   
 
