@@ -17,22 +17,6 @@ const Password = () => {
         }
     }
 
-    const handleUppercase = (event) => {
-        setIsUppercase(event.target.checked)
-    }
-
-    const handleLowercase = (event) => {
-        setIsLowercase(event.target.checked)
-    }
-
-    const handleNumeric = (event) => {
-        setIsNumeric(event.target.checked)
-    }
-
-    const handleSymbol = (event) => {
-        setIsSymbol(event.target.checked)
-    }
-
     const handleClipboard = () => {
         //copy password to clipboard
         const valueSpan = document.getElementById('result').textContent;
@@ -67,25 +51,25 @@ const Password = () => {
                         <label htmlFor="uppercase">
                             Include uppercase letters
                         </label>
-                        <input type="checkbox" id="uppercase" value="uppercase" checked={isUppercase} onChange={handleUppercase}></input>
+                        <input type="checkbox" id="uppercase" value="uppercase" checked={isUppercase} onChange={(event) => {setIsUppercase(event.target.checked)}}></input>
                     </div>
                     <div className='password-input'>
                         <label htmlFor="lowercase">
                             Include lowercase letters
                         </label>
-                        <input type="checkbox" id="lowercase"value="lowercase" checked={isLowercase} onChange={handleLowercase}></input>
+                        <input type="checkbox" id="lowercase"value="lowercase" checked={isLowercase} onChange={(event) => {setIsLowercase(event.target.checked)}}></input>
                     </div>
                     <div className='password-input'>
                         <label htmlFor="numbers">
                             Include numbers
                         </label>
-                        <input type="checkbox" id="numbers"value="numbers"checked={isNumeric} onChange={handleNumeric}></input>
+                        <input type="checkbox" id="numbers"value="numbers"checked={isNumeric} onChange={(event) => {setIsNumeric(event.target.checked)}}></input>
                     </div>
                     <div className='password-input'>
                         <label htmlFor="symbols">
                             Include symbols
                         </label>
-                        <input type="checkbox" id="symbols" value="symbols" checked={isSymbol} onChange={handleSymbol}></input>
+                        <input type="checkbox" id="symbols" value="symbols" checked={isSymbol} onChange={(event) => {setIsSymbol(event.target.checked)}}></input>
                     </div>
                     <div>
                         <button className='password-button' onClick={handleClick}>Generate Password</button>
