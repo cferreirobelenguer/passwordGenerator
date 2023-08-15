@@ -3,6 +3,7 @@ import '../Password/Password.css';
 import {ContentPaste} from '@mui/icons-material'
 
 const Password = () => {
+    //input states
     const [number, setNumber] = useState(20);
     const [isUppercase, setIsUppercase] = useState(true);
     const [isLowercase, setIsLowercase] = useState(true);
@@ -24,6 +25,7 @@ const Password = () => {
     }
 
     const handleClick = () => {
+        //generate password with the results
         console.log("Número ",number)
         console.log("Uppercase ",isUppercase)
         console.log("Lowercase" ,isLowercase)
