@@ -33,7 +33,38 @@ const Password = () => {
             for( let i=0; i<number; i++) {
                 randomNumber = randomNumber + Math.floor(Math.random() * 10);
             }
-        setResult(randomNumber)
+        setResult(randomNumber);
+    }
+
+    const getSymbol = (number) => {
+         //if only are symbols
+        const symb = ",.-;:-¨´ç}{+`[]^*¡¿'?=)(/&%$#@|!ºª";
+        let resultSymb = '';
+        for (let i=0; i<number; i++) {
+            resultSymb += symb.charAt(Math.floor(Math.random() * number));
+        }
+        setResult(resultSymb);
+    }   
+
+    const getLowercase = (number) => {
+        //if only are lowercase letters
+        const abc = "abcdefghijklmnñopqrstuwxyz"
+        let resultAbc = '';
+        for (let i=0; i<number; i++) {
+            resultAbc += abc.charAt(Math.floor(Math.random() * number));
+        }
+        setResult(resultAbc);
+    }
+
+    const getUppercase = (number) => {
+        //if only are uppercase letters
+        const ABC = "ABCDEJGHIJKLMNÑOPQRSTUVWXYZ";
+        let resultABC = '';
+        for (let i=0; i<number; i++) {
+            resultABC += ABC.charAt(Math.floor(Math.random() * number));
+        }
+        setResult(resultABC);
+
     }
 
     const handleClick = () => {
@@ -45,7 +76,13 @@ const Password = () => {
         console.log("Symbol ",isSymbol)
         
         if (isNumeric && !isUppercase && !isLowercase && !isSymbol) {
-            getNumeric(number)
+            getNumeric(number);
+        } else if (isSymbol && !isNumeric && !isUppercase && !isLowercase) {
+            getSymbol(number);
+        } else if (isLowercase && !isSymbol && !isUppercase && !isNumeric) {
+            getLowercase(number);
+        } else if (isUppercase && !isLowercase && !isNumeric && !isSymbol) {
+            getUppercase(number);
         }
     }   
 
