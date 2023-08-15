@@ -10,6 +10,9 @@ const Password = () => {
     const [isNumeric, setIsNumeric] =useState(true);
     const [isSymbol, setIsSymbol] = useState(true);
 
+    //Result
+    const [result, setResult] = useState(''); 
+
     const handleNumber = (event) => {
         const inputValue = event.target.value;
         //If the password length exceeds the limit which is 20; the length will default to 20
@@ -24,6 +27,15 @@ const Password = () => {
         navigator.clipboard.writeText(valueSpan);
     }
 
+    const getNumeric = (number) => {
+        //if only is numeric
+        let randomNumber='';
+            for( let i=0; i<number; i++) {
+                randomNumber = randomNumber + Math.floor(Math.random() * 10);
+            }
+        setResult(randomNumber)
+    }
+
     const handleClick = () => {
         //generate password with the results
         console.log("Número ",number)
@@ -31,6 +43,10 @@ const Password = () => {
         console.log("Lowercase" ,isLowercase)
         console.log("Numeric ",isNumeric)
         console.log("Symbol ",isSymbol)
+        
+        if (isNumeric && !isUppercase && !isLowercase && !isSymbol) {
+            getNumeric(number)
+        }
     }   
 
     
@@ -39,7 +55,7 @@ const Password = () => {
             <div className="password-container-section">
                 <h2 className='password-title'>Password Generator</h2>
                 <div className='password-result'>
-                    <span id="result"></span>
+                    <span id="result">{result}</span>
                     <button className="password-btn" id="clipboard" onClick={handleClipboard} ><ContentPaste></ContentPaste></button>
                 </div>
                 <div className='password-inputs'>
