@@ -1,4 +1,4 @@
-# 50 proyects 50 days password generator
+# 50 projects 50 days password generator
 
 ## Technologies
 
